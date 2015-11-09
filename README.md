@@ -3,7 +3,7 @@ Herramienta para correr una serie de procesos y obtener en JSON el resultado de 
 
 ## Uso
 
-Primero que nada necesitas ![lein](http://leiningen.org)
+Primero que nada necesitas [lein](http://leiningen.org)
 
 Clona el repo y entra al folder
 
@@ -15,5 +15,4 @@ Por ejemplo prueba:
 lein run project.clj
 
 ## Licencia
-
-![[Libre Uso MX] (https://raw.githubusercontent.com/mxabierto/assets/master/img/ic-libre-uso.png)](http://datos.gob.mx/libreusomx)
+<a href=http://datos.gob.mx/libreusom><img src="http://datos.gob.mx/libreusomx"></a>
