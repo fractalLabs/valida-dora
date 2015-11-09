@@ -14,6 +14,9 @@ Y para ejecutar un archivo o directorio haz:
 
 lein run [ARCHIVO]
 
+Por ejemplo prueba:
+lein run project.clj
+
 ## Licencia
 
 ![Libre Uso MX](http://datos.gob.mx/libreusomx)
