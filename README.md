@@ -1,8 +1,5 @@
-# valida-dora
-
-Herramienta para correr una serie de procesos y obtener en JSON el resultado de todos.
-
 ![dora](https://raw.githubusercontent.com/fractalLabs/valida-dora/master/resources/validadora.png)
+Herramienta para correr una serie de procesos y obtener en JSON el resultado de todos.
 
 ## Uso
 
