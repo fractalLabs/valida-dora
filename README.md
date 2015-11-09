@@ -16,4 +16,4 @@ lein run project.clj
 
 ## Licencia
 
-![Libre Uso MX](http://datos.gob.mx/libreusomx)
+![[Libre Uso MX] (https://raw.githubusercontent.com/mxabierto/assets/master/img/ic-libre-uso.png)](http://datos.gob.mx/libreusomx)
