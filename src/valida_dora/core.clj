@@ -5,19 +5,26 @@
             [nillib.formats :refer :all])
   (:gen-class))
 
-(defn shsh [& command]
+(defn shsh
+  "Ejecuta un comando de bash, los argumentos pueden estar
+  en una o mas strings"
+  [& command]
   (let [result (sh "/bin/sh" "-c" (s/join " " command))]
     (str (:err result) (:out result))))
 
-(defn ls [dir]
+(defn ls
+  "Wrapper de 'ls' de bash"
+  [dir]
   (re-seq #"[^\n]+" (:out (sh "ls" dir))))
 
 (def metas
+  "Vector con las validaciones a realizar"
   ["head -n 1"
    "file"
    "wc -l"])
 
 (defn profile
+  "Hacer las perfilaciones para un archivo"
   ([file-name] (profile file-name metas))
   ([file-name metas]
     (let [data (slurp file-name)]
@@ -30,26 +37,34 @@
                  metas)))))
 
 (defn folder-file
-  "Concat the file name to the folder"
+  "Concatena la ruta al archivo"
   [folder file]
   (if-not (= (last folder) \/)
           (str folder "/" file)
           (str folder file)))
 
-(defn is-directory? [route]
+(defn is-directory?
+  "Predicado para checar si el archivo es directorio"
+  [route]
   (.isDirectory (io/file route)))
 
-(defn profile-folder [folder]
+(defn profile-folder
+  "Hacer las perfilaciones para todos los archivos de un folder"
+  [folder]
   (doall (pmap #(try {:file %
                       :profile (profile %)}
                      (catch Exception e nil))
                (map (partial folder-file folder)
                     (remove is-directory? (ls folder))))))
 
-(defn validate [file-name]
+(defn validate
+  "Ejecuta las perfilaciones para un archivo o folder"
+  [file-name]
   (if (is-directory? file-name)
       (profile-folder file-name)
       (profile file-name)))
 
-(defn -main [file-name]
+(defn -main
+  "Ejecuta las validaciones e imprime el resultado en json"
+  [file-name]
   (println (json (validate file-name))))
