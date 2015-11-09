@@ -14,5 +14,15 @@ lein run [ARCHIVO]
 Por ejemplo prueba:
 lein run project.clj
 
+Las validaciones que ejecuta se encuentran en src/valida-dora/core.clj adentro de (def metas [])
+
+(def metas
+  ["head -n 1"
+   "file"
+   "wc -l"])
+
+Cada elemento o validación puede ser una string, que representa algo que corre en el shell y lleva como último argumento el nombre de un archivo.
+O una función en Clojure que lleva como argumento un texto (el archivo representado como una string).
+
 ## Licencia
-<a href=http://datos.gob.mx/libreusom><img src="http://datos.gob.mx/libreusomx"></a>
+[Libre Uso MX](http://datos.gob.mx/libreusomx)
