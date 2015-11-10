@@ -1,6 +1,7 @@
 (ns valida-dora.core
-  (:require [clojure.java.io :as io]
-            [clojure.java.shell :refer :all]
+  (:require [clojure.java
+             [io :as io]
+             [shell :refer :all]]
             [clojure.string :as s]
             [nillib.formats :refer :all])
   (:gen-class))
