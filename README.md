@@ -12,11 +12,12 @@ Y para ejecutar un archivo o directorio haz:
 `lein run [ARCHIVO]`
 
 Por ejemplo prueba:
+
 `lein run project.clj`
 
-Las validaciones que ejecuta se encuentran en src/valida-dora/core.clj adentro de `(def metas [])`
+Las validaciones que ejecuta se encuentran en `src/valida-dora/core.clj` adentro de `(def metas [])`
 
-```
+```clojure
 (def metas
   ["head -n 1"
    "file"
