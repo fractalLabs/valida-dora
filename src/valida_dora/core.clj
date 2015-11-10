@@ -27,21 +27,21 @@
   "Hacer las perfilaciones para un archivo"
   ([file-name] (profile file-name metas))
   ([file-name metas]
-    (let [data (slurp file-name)]
-      (map #(hash-map :meta (str %1) :data %2)
-           metas
-           (pmap #(try (if (string? %)
-                           (shsh % file-name)
-                           (% data))
-                  (catch Exception e (str e)))
-                 metas)))))
+   (let [data (slurp file-name)]
+     (map #(hash-map :meta (str %1) :data %2)
+          metas
+          (pmap #(try (if (string? %)
+                        (shsh % file-name)
+                        (% data))
+                      (catch Exception e (str e)))
+                metas)))))
 
 (defn folder-file
   "Concatena la ruta al archivo"
   [folder file]
   (if-not (= (last folder) \/)
-          (str folder "/" file)
-          (str folder file)))
+    (str folder "/" file)
+    (str folder file)))
 
 (defn is-directory?
   "Predicado para checar si el archivo es directorio"
@@ -61,8 +61,8 @@
   "Ejecuta las perfilaciones para un archivo o folder"
   [file-name]
   (if (is-directory? file-name)
-      (profile-folder file-name)
-      (profile file-name)))
+    (profile-folder file-name)
+    (profile file-name)))
 
 (defn -main
   "Ejecuta las validaciones e imprime el resultado en json"
