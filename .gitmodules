@@ -1,0 +1,3 @@
+[submodule "validaciones/IDMX"]
+	path = validaciones/IDMX
+	url = https://github.com/lromang/IDMX.git
