@@ -22,7 +22,8 @@
   "Vector con las validaciones a realizar"
   ["head -n 1"
    "file"
-   "wc -l"])
+   "wc -l"
+   "validaciones/IDMX/code/prep_proc.sh"])
 
 (defn profile
   "Hacer las perfilaciones para un archivo"
